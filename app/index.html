@@ -10,45 +10,62 @@
     Hello world
 
     <script>
-        {
-            let a = 1, b = 1;
+        'use strict';
 
-            let c = ++a; // 2 (a = 2, c = 2)
-            let d = b++; // 1 (b = 2, d = 1)
+        // if ("0") {
+        //     // This will be called since Boolean("0") is true (Boolean of string that isn't empty is true)
+        //     alert( 'Hello' );
+        // }
 
-            console.log(a, b, c, d);
-        }
-        
-        {
-            let a = 2;
+        // const answer = prompt("What is the “official” name of JavaScript?", "");
 
-            let x = 1 + (a *= 2); // 5 (a = 4, x = 5)
+        // if (answer.toLowerCase() === "ecmascript") {
+        //     alert("Right!");
+        // } else {
+        //     alert("Didn't know? ECMAScript");
+        // }
 
-            console.log(a, x);
-        }
+        // const num = +prompt("Give me a number");
 
-        console.log("" + 1 + 0); // "10"
-        console.log("" - 1 + 0); // -1
-        console.log(true + false); // 1
-        console.log(6 / "3"); // 2
-        console.log("2" * "3"); // 6
-        console.log(4 + 5 + "px"); // NaN -> Incorrect, the right answer is "9px" binary + will alway return a string if any of the operands are strings
-        console.log("$" + 4 + 5); // "$45"
-        console.log("4" - 2); // 2
-        console.log("4px" - 2); // NaN
-        console.log(7 / 0); // Infinite
-        console.log("  -9  " + 5); // "  -9  5"
-        console.log("  -9  " - 5); // -14
-        console.log(null + 1); // 1
-        console.log(undefined + 1); // 1 -> Incorrect, the right answer is NaN. The + unary and the Number Primitive wrapper function return NaN when passing undefined
-        console.log(" \t \n" - 2); // -2 A string converted to a number will always be trimmed from start and end before the conversion
+        // if (!num) {
+        //     alert(0);
+        // } else if (num > 0) {
+        //     alert(1);
+        // } else {
+        //     alert(-1);
+        // }
 
-        // The return type for prompt is string, so even though we want to default the values to numbers, we will get back a string
-        let a = prompt("First number?", 1);
-        let b = prompt("Second number?", 2);
+        let a = 3, b = 2;
+        let result;
 
-        alert(a + b); // "12" (bug)
-        alert(+a + +b); // 3 (fix)
+        // if (a + b < 4) {
+        //     result = 'Below';
+        // } else {
+        //     result = 'Over';
+        // }
+
+        (a + b < 4) ? result = 'Below' : result = 'Over';
+
+        alert(result);
+
+        const login = prompt("Tell me your role", "");
+        let message;
+
+        // if (login == 'Employee') {
+        //     message = 'Hello';
+        // } else if (login == 'Director') {
+        //     message = 'Greetings';
+        // } else if (login == '') {
+        //     message = 'No login';
+        // } else {
+        //     message = '';
+        // }
+
+        (login == 'Employee') ? message = 'Hello' : 
+        (login == 'Director') ? message = 'Greetings' : 
+        (login == '') ? message = 'No login' : message = '';
+
+        alert(message);
     </script>
 
     <!-- live reloading logic using socket.io. Server emits events to notify the client app to refresh when changes are detected in /app -->
