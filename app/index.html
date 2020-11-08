@@ -11,61 +11,53 @@
 
     <script>
         'use strict';
+        
+        // alert( null || 2 || undefined ); // 2;
+        // alert( alert(1) || 2 || alert(3) ); // 1, 2;
+        // alert( 1 && null && 2 ); // null;
+        // alert( alert(1) && alert(2) ); // 1 -> Incorrect: the answer is 1 then undefined
+        // alert( null || 2 && 3 || 4 ); // 3
 
-        // if ("0") {
-        //     // This will be called since Boolean("0") is true (Boolean of string that isn't empty is true)
-        //     alert( 'Hello' );
-        // }
-
-        // const answer = prompt("What is the “official” name of JavaScript?", "");
-
-        // if (answer.toLowerCase() === "ecmascript") {
-        //     alert("Right!");
+        // let age = 30;
+        // if (age >= 14 && age <= 90) {
+        //     alert("Between 14 and 90 (inclusively)");
         // } else {
-        //     alert("Didn't know? ECMAScript");
+        //     alert("Outside of 14 and 90");
         // }
 
-        // const num = +prompt("Give me a number");
-
-        // if (!num) {
-        //     alert(0);
-        // } else if (num > 0) {
-        //     alert(1);
+        // if (!(age >= 14 && age <= 90)) {
+        //     alert("Outside of 14 and 90");
         // } else {
-        //     alert(-1);
+        //     alert("Between 14 and 90 (inclusively)");
         // }
 
-        let a = 3, b = 2;
-        let result;
-
-        // if (a + b < 4) {
-        //     result = 'Below';
+        // if (age < 14 || age > 90) {
+        //     alert("Outside of 14 and 90");
         // } else {
-        //     result = 'Over';
+        //     alert("Between 14 and 90 (inclusively)");
         // }
 
-        (a + b < 4) ? result = 'Below' : result = 'Over';
+        // if (-1 || 0) alert( 'first' ); // executes
+        // if (-1 && 0) alert( 'second' ); // no execution
+        // if (null || -1 && 1) alert( 'third' ); // executes
 
-        alert(result);
+        const login = prompt("Admin", "");
 
-        const login = prompt("Tell me your role", "");
-        let message;
+        if (login === 'Admin') {
+            const password = prompt("Password please (no real passwords please)", "");
 
-        // if (login == 'Employee') {
-        //     message = 'Hello';
-        // } else if (login == 'Director') {
-        //     message = 'Greetings';
-        // } else if (login == '') {
-        //     message = 'No login';
-        // } else {
-        //     message = '';
-        // }
-
-        (login == 'Employee') ? message = 'Hello' : 
-        (login == 'Director') ? message = 'Greetings' : 
-        (login == '') ? message = 'No login' : message = '';
-
-        alert(message);
+            if (password === 'TheMaster') {
+                alert("Welcome");
+            } else if (!password) {
+                alert("Canceled (password)");
+            } else {
+                alert("Wrong password");
+            }
+        } else if (!login) {
+            alert("Canceled (login)");
+        } else {
+            alert("I don't know you");
+        }
     </script>
 
     <!-- live reloading logic using socket.io. Server emits events to notify the client app to refresh when changes are detected in /app -->
