@@ -11,53 +11,86 @@
 
     <script>
         'use strict';
+
+        // {
+        //     let i = 3;
+
+        //     while (i) {
+        //         alert( i-- );// 3, 2, 1
+        //     }
+        // }
+
+        // {
+        //     let i = 0;
+        //     while (++i < 5) alert( i );// 1, 2, 3, 4
+        // }
+
+        // {
+        //     let i = 0;
+        //     while (i++ < 5) alert( i );// 1, 2, 3, 4, 5
+        // }
+
+        // for (let i = 0; i < 5; i++) alert( i );// 0, 1, 2, 3, 4
+
+        // for (let i = 0; i < 5; ++i) alert( i );// 0, 1, 2, 3, 4
+
+        // for (let i = 2; i <= 10; i++) {
+        //     if (!(i % 2)) {
+        //         alert(i);// 2, 4, 6, 8, 10
+        //     }
+        // }
+
+        // {
+        //     let i = 2;
+        //     while (i <= 10) {
+        //         if (!(i % 2)) {
+        //             alert(i);// 2, 4, 6, 8, 10
+        //         }
+
+        //         i += 1;
+        //     }    
+        // }
         
-        // alert( null || 2 || undefined ); // 2;
-        // alert( alert(1) || 2 || alert(3) ); // 1, 2;
-        // alert( 1 && null && 2 ); // null;
-        // alert( alert(1) && alert(2) ); // 1 -> Incorrect: the answer is 1 then undefined
-        // alert( null || 2 && 3 || 4 ); // 3
+        // {
+        //     // for (let i = 0; i < 3; i++) {
+        //     //    alert( `number ${i}!` );
+        //     // }
 
-        // let age = 30;
-        // if (age >= 14 && age <= 90) {
-        //     alert("Between 14 and 90 (inclusively)");
-        // } else {
-        //     alert("Outside of 14 and 90");
+        //     let i = 0;
+        //     while (i < 3) {
+        //         alert( `number ${i}!` );
+        //         i++;
+        //     }
         // }
-
-        // if (!(age >= 14 && age <= 90)) {
-        //     alert("Outside of 14 and 90");
-        // } else {
-        //     alert("Between 14 and 90 (inclusively)");
+        
+        // {
+        //     let num = "";
+        //     while(num = prompt("What is a number bigger than 100", "") || "", num && (num <= 100)) {
+        //         console.log(num);
+        //     }
         // }
+        
+        // let num;
 
-        // if (age < 14 || age > 90) {
-        //     alert("Outside of 14 and 90");
-        // } else {
-        //     alert("Between 14 and 90 (inclusively)");
-        // }
+        // do {
+        //     num = prompt("Enter a number greater than 100?", 0);
+        // } while (num <= 100 && num);
 
-        // if (-1 || 0) alert( 'first' ); // executes
-        // if (-1 && 0) alert( 'second' ); // no execution
-        // if (null || -1 && 1) alert( 'third' ); // executes
+        function getPrimesUpTil(n) {
+            outer: 
+            for (let i = 2; i <= n; i++) {
+                inner: 
+                for (let j = 2; j < i; j++) {
+                    if (!(i % j)) {
+                        continue outer;
+                    }
+                }
 
-        const login = prompt("Admin", "");
-
-        if (login === 'Admin') {
-            const password = prompt("Password please (no real passwords please)", "");
-
-            if (password === 'TheMaster') {
-                alert("Welcome");
-            } else if (!password) {
-                alert("Canceled (password)");
-            } else {
-                alert("Wrong password");
+                alert(i);
             }
-        } else if (!login) {
-            alert("Canceled (login)");
-        } else {
-            alert("I don't know you");
         }
+
+        getPrimesUpTil(10);
     </script>
 
     <!-- live reloading logic using socket.io. Server emits events to notify the client app to refresh when changes are detected in /app -->
