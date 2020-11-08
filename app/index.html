@@ -9,6 +9,10 @@
     Hello world
 
     <script>
+        // source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/String#Examples
+        // Type Conversions using built in Classes can be error prone since developers might try to use the new keyboard when attempting to make conversions
+        console.log(new String('some str'), String('some str'));// String object, 'some str'
+
         function test(classConstrcutor) {
             console.log(classConstrcutor.name, classConstrcutor("words"), classConstrcutor("0"), classConstrcutor(0), classConstrcutor(100), classConstrcutor(true), classConstrcutor(undefined), classConstrcutor(NaN));
         }
