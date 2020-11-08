@@ -9,9 +9,18 @@
     Hello world
 
     <script>
-        alert("I'm Javascript! (inline)");
-    </script>
-    <script src="/alert.js">
+        let name = "John";
+        const admin = name;
+        alert(admin);// "John"
+
+        // Example expects 'ourPlanetName'
+        // This is alright, but I don't think we need to specify 'our' unless we are working with more than one planet
+        const planetName = 'Earth';
+        // Example expects currentUserName, but that assumes visitors have a user name (maybe they just have uid)
+        let currentVisitor;
+
+        const BIRTHDAY = '18.04.1982';// This is expected use of UpperCase as 'BIRTHDAY' is more readable than its value
+        const age = someCode(BIRTHDAY);// I wouldn't use UpperCase here since we are assign this variable to the output of a function
     </script>
 
     <!-- live reloading logic using socket.io. Server emits events to notify the client app to refresh when changes are detected in /app -->
