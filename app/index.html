@@ -9,11 +9,11 @@
     Hello world
 
     <script>
-        let name = "Ilya";
-
-        alert(`hello ${1}`);// "hello 1"
-        alert(`hello ${"name"}`);// "hello name"
-        alert(`hello ${name}`);// "hello Ilya"
+        // second argument (default) for prompt is optional, but IE will set the default to "undefined" unless set
+        let name = prompt("Hello visitor, what is your name?", "");
+        if (name) {
+            alert(`Hello ${name}`);
+        }
     </script>
 
     <!-- live reloading logic using socket.io. Server emits events to notify the client app to refresh when changes are detected in /app -->
