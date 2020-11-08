@@ -12,85 +12,59 @@
     <script>
         'use strict';
 
-        // {
-        //     let i = 3;
+        // const browser = prompt("What is your browser", "");
 
-        //     while (i) {
-        //         alert( i-- );// 3, 2, 1
-        //     }
+        // // switch (browser) {
+        // //     case 'Edge':
+        // //         alert( "You've got the Edge!" );
+        // //         break;
+
+        // //     case 'Chrome':
+        // //     case 'Firefox':
+        // //     case 'Safari':
+        // //     case 'Opera':
+        // //         alert( 'Okay we support these browsers too' );
+        // //         break;
+
+        // //     default:
+        // //         alert( 'We hope that this page looks ok!' );
+        // // }
+
+        // if (browser === 'Edge') {
+        //     alert( "You've got the Edge!" );
+        // } else if (browser === 'Chrome' || browser === 'Firefox' || browser === 'Safari' || browser === 'Opera') {
+        //     console.log(browser);
+        //     alert( 'Okay we support these browsers too' );
+        // } else {
+        //     alert( 'We hope that this page looks ok!' );
         // }
 
-        // {
-        //     let i = 0;
-        //     while (++i < 5) alert( i );// 1, 2, 3, 4
+        let a = +prompt('a?', '');
+
+        // if (a == 0) {
+        //     alert( 0 );
+        // }
+        // if (a == 1) {
+        //     alert( 1 );
         // }
 
-        // {
-        //     let i = 0;
-        //     while (i++ < 5) alert( i );// 1, 2, 3, 4, 5
+        // if (a == 2 || a == 3) {
+        //     alert( '2,3' );
         // }
 
-        // for (let i = 0; i < 5; i++) alert( i );// 0, 1, 2, 3, 4
-
-        // for (let i = 0; i < 5; ++i) alert( i );// 0, 1, 2, 3, 4
-
-        // for (let i = 2; i <= 10; i++) {
-        //     if (!(i % 2)) {
-        //         alert(i);// 2, 4, 6, 8, 10
-        //     }
-        // }
-
-        // {
-        //     let i = 2;
-        //     while (i <= 10) {
-        //         if (!(i % 2)) {
-        //             alert(i);// 2, 4, 6, 8, 10
-        //         }
-
-        //         i += 1;
-        //     }    
-        // }
-        
-        // {
-        //     // for (let i = 0; i < 3; i++) {
-        //     //    alert( `number ${i}!` );
-        //     // }
-
-        //     let i = 0;
-        //     while (i < 3) {
-        //         alert( `number ${i}!` );
-        //         i++;
-        //     }
-        // }
-        
-        // {
-        //     let num = "";
-        //     while(num = prompt("What is a number bigger than 100", "") || "", num && (num <= 100)) {
-        //         console.log(num);
-        //     }
-        // }
-        
-        // let num;
-
-        // do {
-        //     num = prompt("Enter a number greater than 100?", 0);
-        // } while (num <= 100 && num);
-
-        function getPrimesUpTil(n) {
-            outer: 
-            for (let i = 2; i <= n; i++) {
-                inner: 
-                for (let j = 2; j < i; j++) {
-                    if (!(i % j)) {
-                        continue outer;
-                    }
-                }
-
-                alert(i);
-            }
+        switch (a) {
+            case 0: 
+                alert( 0 );
+                break;
+            case 1: 
+                alert( 1 );
+                break;
+            case 2:
+            case 3: 
+                console.log(a);
+                alert( '2,3' );
+                break;
         }
-
-        getPrimesUpTil(10);
     </script>
 
     <!-- live reloading logic using socket.io. Server emits events to notify the client app to refresh when changes are detected in /app -->
