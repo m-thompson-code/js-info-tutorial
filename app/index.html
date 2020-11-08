@@ -9,10 +9,18 @@
     Hello world
 
     <script>
-        // second argument (default) for prompt is optional, but IE will set the default to "undefined" unless set
-        let name = prompt("Hello visitor, what is your name?", "");
-        if (name) {
-            alert(`Hello ${name}`);
+        function test(classConstrcutor) {
+            console.log(classConstrcutor.name, classConstrcutor("words"), classConstrcutor("0"), classConstrcutor(0), classConstrcutor(100), classConstrcutor(true), classConstrcutor(undefined), classConstrcutor(NaN));
+        }
+
+        test(String);
+        test(Number);
+        test(Boolean);
+
+        try {
+            test(BigInt);
+        }catch(error) {
+            console.warn(error);
         }
     </script>
 
