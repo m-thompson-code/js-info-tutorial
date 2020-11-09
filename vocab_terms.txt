@@ -32,3 +32,5 @@ Object.assign
 values are called roots (Garbage collection)
 Interlinked objects
 How do constructor functions work with return
+Optional chaining '?.' syntax for function
+Optional chaining '?.' syntax for accessing property with brackets []
