@@ -8,3 +8,5 @@ inclusively (ranges that are conslusively)
 Nullish coalescing operator
 Labels for break/continue
 switch syntax
+"the function body"
+directive
