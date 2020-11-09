@@ -5,32 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- https://javascript.info/ -->
     <title>javascript.info tutorial</title>
-
-    <!-- add mocha css, to show results -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
-    
-    <!-- add mocha framework code -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
-    
-    <script>
-        mocha.setup('bdd'); // minimal setup
-    </script>
-
-    <!-- add chai -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
 </head>
 <body>
-    <!-- the element with id="mocha" will contain test results -->
-    <div id="mocha"></div>
+    <h1>Hello world :)</h1>
 
     <script src="/tutorial.js"></script>
-
-    <script src="/test.js"></script>
-
-    <!-- run tests! -->
-    <script>
-        mocha.run();
-    </script>
 
     <!-- live reloading logic using socket.io. Server emits events to notify the client app to refresh when changes are detected in /app -->
     <script src="/socket.io/socket.io.js"></script>

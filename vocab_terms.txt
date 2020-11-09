@@ -25,3 +25,6 @@ Chrome debugging: "Step" hotkey (F9)
 Chrome debugging: "Step Over" hotkey (F10)
 Chrome debugging: You can pause on exception
 Behavior Driven Development (BDD)
+Transpiler (Babel)
+Literal (Like object literal)
+Property value shorthand (objects)
