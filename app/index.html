@@ -12,51 +12,30 @@
     <script>
         'use strict';
 
-        // function checkAge(age) {
-        //     if (age > 18) {
-        //         return true;
-        //     } else {
-        //         return confirm('Did parents allow you?');
-        //     }
+        // function ask(question, yes, no) {
+        //     if (confirm(question)) yes()
+        //     else no();
         // }
 
-        // function checkAge(age) {
-        //     return (age > 18) || confirm('Did parents allow you?');
-        // }
+        // ask(
+        //     "Do you agree?",
+        //     function() { alert("You agreed."); },
+        //     function() { alert("You canceled the execution."); }
+        // );
 
-        // function checkAge(age) {
-        //     return (age > 18) ? true | confirm('Did parents allow you?');
-        // }
-
-        function min(...args) {
-            let smallest = args[0];
-
-            for (const arg of args) {
-                if (smallest > arg) {
-                    smallest = arg;
-                }
-            }
-
-            return smallest;
+        // Changing ask to an arrow function is incorrect
+        // The instructions mentioned refactoring the above commented code 
+        // such that we replaced the Function Expressions (not the function declariations)
+        const ask = (question, yes, no) => {
+            if (confirm(question)) yes()
+            else no();
         }
 
-        console.log(min(2, 5) == 2); // true
-        console.log(min(3, -1) == -1); // true
-        console.log(min(1, 1) == 1); // true
-
-        function pow(x, n) {
-            let result = 1;
-
-            for (let i = 0; i < n; i++) {
-                result *= x;
-            }
-
-            return result;
-        }
-
-        console.log(pow(3, 2));// = 3 * 3 = 9
-        console.log(pow(3, 3));// = 3 * 3 * 3 = 27
-        console.log(pow(1, 100));// = 1 * 1 * ...* 1 = 1
+        ask(
+            "Do you agree?",
+            () => { alert("You agreed."); },
+            () => { alert("You canceled the execution."); }
+        );
     </script>
 
     <!-- live reloading logic using socket.io. Server emits events to notify the client app to refresh when changes are detected in /app -->
