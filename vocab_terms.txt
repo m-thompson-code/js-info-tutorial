@@ -1,4 +1,5 @@
 Primitive
+What are the 7 primitives?
 Primitive wrapper
 unary
 binary

@@ -1,39 +1,13 @@
-'use strict';
+// 'use strict';
 
-// const test = new function MooCow() {
-const test = {
-    name: 'moo cow',
-    // this.name = 'moo cow';
+// let str = "Hello";
 
-    [Symbol.toPrimitive](hint) {
-        console.log(hint);
-        return hint === 'string' ? this._toString() : this._valueOf();
-    },
+// str.test = 5; // (*)
 
-    _toString() {
-        return this.name;
-    },
+// alert(str.test); // What happens?
 
-    toString() {
-        return this[Symbol.toPrimitive]('string');
-    },
+// // I thought that this would result in an error no matter what, but this will only error on strict mode
 
-    _valueOf() {
-        return 9;
-    },
-
-    valueOf() {
-        return this[Symbol.toPrimitive]('number');
-    },
-};
-
-console.log(test);
-console.log(test + " str test");
-console.log(test + 4);
-console.log("str test " + test);
-console.log(4 + test);
-console.log(test * 2);
-console.log(2 * test);
-console.log(String(test));
-console.log(Number(test));
-console.log(Boolean(test));
+// // If you're not in strict mode, the temporary primative constructor is called and created an object
+// // Then that object's property test is added, but because the object is only temporary, this effectively does nothing
+// // the alert will be undefined
