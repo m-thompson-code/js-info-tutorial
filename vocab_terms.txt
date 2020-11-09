@@ -31,3 +31,4 @@ Property value shorthand (objects)
 Object.assign
 values are called roots (Garbage collection)
 Interlinked objects
+How do constructor functions work with return

@@ -1,73 +1,93 @@
 'use strict';
 
-// // function makeUser() {
-// //     return {
-// //         name: "John",
-// //         ref: this
-// //     };
-// // }
+// function User(name) {
+//     // this = {};  (implicitly)
+  
+//     // add properties to this
+//     this.name = name;
+//     this.isAdmin = false;
+  
+//     // return this;  (implicitly)
+// }
 
-// // let user = makeUser();
+// const test = new User('Mark');
+// console.log(test);
 
-// // alert( user.ref.name ); // What's the result?
-// // // John - Incorrect, because this is called as a function and not as a method with "dot" syntax
+// let test2;
 
-// function makeUser() {
-//     return {
-//       name: "John",
-//         ref() {
-//             return this;
-//         }
+// {
+//     function User(name) {
+//         // this = {};  (implicitly)
+      
+//         // add properties to this
+//         this.name = name;
+//         this.isAdmin = false;
+      
+//         // return this;  (implicitly)
+
+//         this.other = "Some other User constructor";
+//     }
+
+//     test2 = new User('Mark 2');
+// }
+
+// console.log(test2);
+
+// const moo = {
+//     cow() {
+//         return this.text;
+//     },
+//     text: 'I am cow',
+// };
+
+// console.log(moo.cow());
+
+
+
+
+// const someObject = {
+//     name: "some object",
+// };
+
+// function A() { return someObject }
+// function B() { return someObject }
+
+// let a = new A;
+// let b = new B;
+
+// alert( a == b ); // true
+
+// function Calculator() {
+//     this.read = function() {
+//         this.a = +prompt('a?', '');
+//         this.b = +prompt('b?', '');
+//     };
+
+//     this.sum = function() {
+//         return this.a + this.b;
+//     };
+
+//     this.mul = function() {
+//         return this.a * this.b;
 //     };
 // }
 
-// let user = makeUser();
-
-// alert( user.ref().name ); // John
-
-// const calculator = {
-//     read() {
-//         const _a = +prompt('a?', '');
-//         const _b = +prompt('b?', '');
-
-//         this._read(_a, _b);
-//     },
-//     _read(a, b) {
-//         this.a = a;
-//         this.b = b;
-//     },
-//     sum() {
-//         return this.a + this.b;
-//     },
-//     mul() {// Should be named multiply
-//         return this.a * this.b;
-//     },
-// };
-
+// let calculator = new Calculator();
 // calculator.read();
 
-// console.log(calculator.sum());
-// console.log(calculator.mul());
+// alert( "Sum=" + calculator.sum() );
+// alert( "Mul=" + calculator.mul() );
 
-let ladder = {
-    step: 0,
-    up() {
-        this.step++;
-        return this;
-    },
-    down() {
-        this.step--;
-        return this;
-    },
-    showStep: function() { // shows the current step
-      alert( this.step );
-      return this;
-    },
-};
+function Accumulator(startingValue) {
+    this.value = startingValue;
+    this.read = function() {
+        this.value += +prompt("new value?", "");
+    };
+}
 
-// ladder.up();
-// ladder.up();
-// ladder.down();
-// ladder.showStep(); // 1
+let accumulator = new Accumulator(1); // initial value 1
 
-ladder.up().up().down().showStep(); // 1
+accumulator.read(); // adds the user-entered value
+accumulator.read(); // adds the user-entered value
+
+alert(accumulator.value); // shows the sum of these values
