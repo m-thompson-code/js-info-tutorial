@@ -9,34 +9,7 @@
 <body>
     Hello world
 
-    <script>
-        'use strict';
-
-        // function ask(question, yes, no) {
-        //     if (confirm(question)) yes()
-        //     else no();
-        // }
-
-        // ask(
-        //     "Do you agree?",
-        //     function() { alert("You agreed."); },
-        //     function() { alert("You canceled the execution."); }
-        // );
-
-        // Changing ask to an arrow function is incorrect
-        // The instructions mentioned refactoring the above commented code 
-        // such that we replaced the Function Expressions (not the function declariations)
-        const ask = (question, yes, no) => {
-            if (confirm(question)) yes()
-            else no();
-        }
-
-        ask(
-            "Do you agree?",
-            () => { alert("You agreed."); },
-            () => { alert("You canceled the execution."); }
-        );
-    </script>
+    <script src="/tutorial.js"></script>
 
     <!-- live reloading logic using socket.io. Server emits events to notify the client app to refresh when changes are detected in /app -->
     <script src="/socket.io/socket.io.js"></script>

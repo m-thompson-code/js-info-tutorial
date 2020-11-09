@@ -10,3 +10,17 @@ Labels for break/continue
 switch syntax
 "the function body"
 directive
+Function Declaration
+Function Expression
+Anonymous function
+automatic semicolon insertion
+Arithmetical operators
+Assignment operator
+Conditional operator
+Comparison operator
+Chrome debugging: Conditional breakpoints
+Chrome debugging: Toggle Console while on Sources tab (Esc)
+Chrome debugging: "Resume" hotkey (F8)
+Chrome debugging: "Step" hotkey (F9)
+Chrome debugging: "Step Over" hotkey (F10)
+Chrome debugging: You can pause on exception
