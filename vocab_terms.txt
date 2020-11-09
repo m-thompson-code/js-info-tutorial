@@ -28,3 +28,6 @@ Behavior Driven Development (BDD)
 Transpiler (Babel)
 Literal (Like object literal)
 Property value shorthand (objects)
+Object.assign
+values are called roots (Garbage collection)
+Interlinked objects

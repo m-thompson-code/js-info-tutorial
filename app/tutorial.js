@@ -1,71 +1,73 @@
 'use strict';
 
-// const user = {};
+// // function makeUser() {
+// //     return {
+// //         name: "John",
+// //         ref: this
+// //     };
+// // }
 
-// user.name = "John";
-// user.surname = "Smith";
+// // let user = makeUser();
 
-// debugger;
+// // alert( user.ref.name ); // What's the result?
+// // // John - Incorrect, because this is called as a function and not as a method with "dot" syntax
 
-// user.name = "Pete";
-
-// debugger;
-
-
-// delete user["name"];
-
-// debugger;
-
-// console.log(user);
-
-
-
-// function isEmpty(obj) {
-//     for (let key in obj) {
-//         return false;
-//     }
-
-//     return true;
+// function makeUser() {
+//     return {
+//       name: "John",
+//         ref() {
+//             return this;
+//         }
+//     };
 // }
 
-// let salaries = {
-//     John: 100,
-//     Ann: 160,
-//     Pete: 130,
+// let user = makeUser();
+
+// alert( user.ref().name ); // John
+
+// const calculator = {
+//     read() {
+//         const _a = +prompt('a?', '');
+//         const _b = +prompt('b?', '');
+
+//         this._read(_a, _b);
+//     },
+//     _read(a, b) {
+//         this.a = a;
+//         this.b = b;
+//     },
+//     sum() {
+//         return this.a + this.b;
+//     },
+//     mul() {// Should be named multiply
+//         return this.a * this.b;
+//     },
 // };
 
-// let sum = 0;
+// calculator.read();
 
-// for (let key in salaries) {
-//     sum += salaries[key] || 0;
-// }
+// console.log(calculator.sum());
+// console.log(calculator.mul());
 
-// console.log(sum);
-
-// before the call
-let menu = {
-    width: 200,
-    height: 300,
-    title: "My menu"
+let ladder = {
+    step: 0,
+    up() {
+        this.step++;
+        return this;
+    },
+    down() {
+        this.step--;
+        return this;
+    },
+    showStep: function() { // shows the current step
+      alert( this.step );
+      return this;
+    },
 };
-  
-multiplyNumeric(menu);
-  
-// // after the call
-// menu = {
-//     width: 400,
-//     height: 600,
-//     title:
- "My menu"
-// };
-console.log(menu);
 
-function multiplyNumeric(obj) {
-    for (const key in obj) {
-        if (typeof obj[key] === 'number') {
-            obj[key] = obj[key] * 2;
-        }
-    }
+// ladder.up();
+// ladder.up();
+// ladder.down();
+// ladder.showStep(); // 1
 
-    return obj;
-}
+ladder.up().up().down().showStep(); // 1
