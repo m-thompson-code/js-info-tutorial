@@ -1,13 +1,33 @@
 // 'use strict';
 
-// let str = "Hello";
+// // Create a script that prompts the visitor to enter two numbers
+// // and then shows their sum.
+// function sum(a, b) {
+//     return a + b;
+// }
 
-// str.test = 5; // (*)
+// console.log(sum(
+//     +prompt('a?', ''),
+//     +prompt('b?', ''),
+// ));
 
-// alert(str.test); // What happens?
+// console.log(6.35.toFixed(1));
+// console.log(Math.round(6.35 * 10) / 10);
+// const n = 6.35;
+// console.log(n.toFixed(20));
+// console.log((n * 10).toFixed(20));
+// console.log(Math.round(n * 10) / 10);
 
-// // I thought that this would result in an error no matter what, but this will only error on strict mode
+console.log(typeof Infinity);
+console.log(typeof NaN);
 
-// // If you're not in strict mode, the temporary primative constructor is called and created an object
-// // Then that object's property test is added, but because the object is only temporary, this effectively does nothing
-// // the alert will be undefined
+let i = 0;
+let j = 0;
+while (i != 10) {
+  i += 0.2;
+  console.log(i);
+  j++;
+  if (j > 50) {
+      break;
+  }
+}

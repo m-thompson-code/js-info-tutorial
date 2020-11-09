@@ -37,3 +37,4 @@ Optional chaining '?.' syntax for function
 Optional chaining '?.' syntax for accessing property with brackets []
 Symbol type
 Object to primitive conversion
+How can primitives have methods?
