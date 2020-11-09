@@ -24,3 +24,4 @@ Chrome debugging: "Resume" hotkey (F8)
 Chrome debugging: "Step" hotkey (F9)
 Chrome debugging: "Step Over" hotkey (F10)
 Chrome debugging: You can pause on exception
+Behavior Driven Development (BDD)
