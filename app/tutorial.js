@@ -1,16 +1,36 @@
 'use strict';
 
-function User(name) {
-    this.name = name;
+// let obj = {};
+
+// console.log(obj);
+// window.test_obj = obj;
+
+// console.log(obj.__proto__ === Object.prototype); // true
+
+// console.log(obj.toString === obj.__proto__.toString); //true
+// console.log(obj.toString === Object.prototype.toString); //true
+
+// function f() {
+//     alert("Hello!");
+// }
+
+function f(a, b) {
+    alert( a + b );
 }
-// User.prototype = {
-//     moo: 'cow',
-//     // constructor: 'moo',
-// };
-console.log(User);
 
-let user = new User('John');
-let user2 = new user.constructor('Pete');
+Function.prototype.defer = function(ms) {
+    // const that = this;
+    // return function(...args) {
+    //     console.log(that);
+    //     setTimeout(that.apply(that, args), ms);
+    // };
 
-console.log( user2 ); // Pete (worked!)
-console.log( user2.name ); // Pete (worked!)
+    // const that = this;
+    return (...args) => {
+        console.log(this);
+        setTimeout(this.apply(this, args), ms);
+    };
+}
+
+// f.defer(1000); // shows "Hello!" after 1 second
+f.defer(1000)(1, 2); // shows 3 after 1 second
