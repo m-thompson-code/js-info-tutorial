@@ -51,3 +51,6 @@ reduce/reduceRight(func, initial) – calculate a single value over the array by
 filter(func) - creates a new array where calling func for every element returns truthy
 surrogate pairs
 Iterables and Symbol.iterator and Array.from
+[[Prototype]]
+__proto__
+F.prototype
