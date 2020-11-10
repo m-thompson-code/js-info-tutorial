@@ -39,3 +39,7 @@ Symbol type
 Object to primitive conversion
 How can primitives have methods?
 slice vs substring vs substr (slice is 'better')
+Data Types
+Strucural Types
+Structural Root Primitive
+contiguous subarray
