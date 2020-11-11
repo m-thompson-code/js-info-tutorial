@@ -1,54 +1,49 @@
 'use strict';
 
-// let dictionary = Object.create(null, {
-//     toString: {
-//         // value: function() {
-//         //     let str = '';
-
-//         //     for (let key in dictionary) {
-//         //         if (str) {
-//         //             str += ',';
-//         //         }
-//         //         str += key;
-//         //     }
-
-//         //     return str;
-//         // },
-//         value: function() {
-//             return Object.keys(this).join(',');
-//         },
-//     }
-// });
-
-// // add some data
-// dictionary.apple = "Apple";
-// dictionary.__proto__ = "test"; // __proto__ is a regular property key here
-
-// // only apple and __proto__ are in the loop
-// for(let key in dictionary) {
-//   alert(key); // "apple", then "__proto__"
+// for (let elem of document.body.children) {
+//     console.log(elem); // DIV, UL, DIV, SCRIPT
 // }
 
-// // your toString in action
-// alert(dictionary); // "apple,__proto__"
+// console.log('\n\n');
 
-// console.log(dictionary);
+// for (let elem of document.body.childNodes) {
+//     console.log(elem); // DIV, UL, DIV, SCRIPT
+// }
 
-function Rabbit(name) {
-    this.name = name;
-}
-Rabbit.prototype.sayHi = function() {
-    alert(this.name);
-};
-  
-let rabbit = new Rabbit("Rabbit");
+console.log(document.body.children);
+// console.log(document.body.childNodes);
+console.log(document.body.childNodes[0].nextElementSibling);
+console.log('%c     \n     ', 'background-color: teal');
 
+console.log(document.body.firstElementChild);
+console.log(document.body.firstElementChild.nextElementSibling);
+console.log(document.body.firstElementChild.nextElementSibling.firstElementChild);
+console.log('%c     \n     ', 'background-color: teal');
 
-// rabbit.sayHi();// "Rabbit" // this is rabbit
-// Rabbit.prototype.sayHi(); // undefined (this refers to no one in the Rabbit.prototype.sayHi)
-// Object.getPrototypeOf(rabbit).sayHi(); // Same as above
-// rabbit.__proto__.sayHi(); // rabbit.__proto__ is Rabbit,
+let elem = document.body;
 
-console.log(Rabbit.prototype.constructor == Rabbit);
-console.log(Rabbit.prototype == Object.getPrototypeOf(rabbit));
-console.log(rabbit.__proto__ == Rabbit.prototype);
+// Logically should always be null since lastChild is any node
+console.log(elem.lastChild.nextSibling);
+
+// Doesn't have to be null since children is an array of ElementNodes and there can be other Nodes before the first one (such as a TextNode)
+console.log(elem.children[0].previousSibling);
+
+console.log('%c     \n     ', 'background-color: teal');
+
+const table = document.body.getElementsByTagName('table')[0];
+
+console.log(table);
+
+const rows = table.rows;
+
+// for (let i = 0; i < rows.length; i++) {
+//     const row = rows[i];
+
+//     console.log(row.cells[i]);
+//     row.cells[i].style.backgroundColor = 'red';
+// }
+
+Array.from(rows).map((row, index) => {
+    row.cells[index].style.backgroundColor = 'red';
+});
+
