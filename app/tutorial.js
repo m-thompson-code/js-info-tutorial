@@ -1,49 +1,45 @@
 'use strict';
 
-// for (let elem of document.body.children) {
-//     console.log(elem); // DIV, UL, DIV, SCRIPT
-// }
+// Notice how when setting ids for a div, global (window) stores a referenec to this div by its id
+// console.log(moo);
 
-// console.log('\n\n');
+// // document.getElementsByTagName is a Live Collection
+// const divs = document.getElementsByTagName('div');
 
-// for (let elem of document.body.childNodes) {
-//     console.log(elem); // DIV, UL, DIV, SCRIPT
-// }
+// // The contents of divs will always be updated when the query changes
 
-console.log(document.body.children);
-// console.log(document.body.childNodes);
-console.log(document.body.childNodes[0].nextElementSibling);
-console.log('%c     \n     ', 'background-color: teal');
+// // const interval = new function() {
+// //     this.act = function() {
+// //         setTimeout(() => {
+// //             const newDiv = document.createElement('div');
+// //             newDiv.innerText = `Another one (${})`;
+// //             document.body.appendChild(newDiv);
+// //             console.log(divs);
+// //             this.act();
+// //         }, 1000);
+// //     };
+// // };
 
-console.log(document.body.firstElementChild);
-console.log(document.body.firstElementChild.nextElementSibling);
-console.log(document.body.firstElementChild.nextElementSibling.firstElementChild);
-console.log('%c     \n     ', 'background-color: teal');
+// // interval.act();
 
-let elem = document.body;
+// setInterval(() => {
+//     const newDiv = document.createElement('div');
+//     newDiv.id = `another-one-${divs.length}`;
+//     newDiv.innerText = `Another one (${divs.length})`;
+//     document.body.appendChild(newDiv);
+//     // Notice here, we aren't performing document.getELementsByTagName again, 
+//     // just using the reference to divs. However the Array-like is keeping up to date with the new divs
+//     console.log(divs);
+// }, 1000);
 
-// Logically should always be null since lastChild is any node
-console.log(elem.lastChild.nextSibling);
-
-// Doesn't have to be null since children is an array of ElementNodes and there can be other Nodes before the first one (such as a TextNode)
-console.log(elem.children[0].previousSibling);
-
-console.log('%c     \n     ', 'background-color: teal');
-
-const table = document.body.getElementsByTagName('table')[0];
-
+const table = document.getElementById('age-table');
 console.log(table);
+console.log(table.getElementsByTagName('label'));// document.querySelectorAll('#age-table label')
+console.log(table.getElementsByTagName('td')[0], table.querySelector('td'), table.rows[0].cells[0]);
+console.log(document.querySelector('form[name="search"]'), Array.from(document.getElementsByTagName('form')).filter(form => form.getAttribute('name')==='search')[0]);
 
-const rows = table.rows;
+const form = document.querySelector('form[name="search"]');
+console.log(form.querySelector('input'));
 
-// for (let i = 0; i < rows.length; i++) {
-//     const row = rows[i];
-
-//     console.log(row.cells[i]);
-//     row.cells[i].style.backgroundColor = 'red';
-// }
-
-Array.from(rows).map((row, index) => {
-    row.cells[index].style.backgroundColor = 'red';
-});
-
+const inputs = form.querySelectorAll('input');
+console.log(inputs[inputs.length - 1]);

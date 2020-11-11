@@ -54,3 +54,5 @@ Iterables and Symbol.iterator and Array.from
 [[Prototype]]
 __proto__
 F.prototype
+What are the 4 most commonly used node types for a DOM (document, element nodes, text nodes, comments)
+getElement* vs querySelector* (searching for elements)
