@@ -7,59 +7,30 @@
     <title>javascript.info tutorial</title>
 
     <style>
-        form[name="search"] {
-            background: yellow;
-        }
-        label[moo="cow"] {
-            background: red;
+        a:not([href^="http://internal.com"])[href*="://"] {
+            background: orchid;
         }
     </style>
 </head>
 <body>
-    <div id ="moo">moo div</div>
+    <div data-widget-name="other">Choose the other genre</div>
+    <div data-widget-name="menu">Choose the genre</div>
 
-    <form name="search">
-        <label>Search the site:
-          <input type="text" name="search">
-        </label>
-        <input type="submit" value="Search!">
-      </form>
-    
-      <hr>
-    
-      <form name="search-person">
-        Search the visitors:
-        <table id="age-table">
-          <tr>
-            <td>Age:</td>
-            <td id="age-list">
-              <label moo="cow">
-                <input type="radio" name="age" value="young">less than 18</label>
-              <label>
-                <input type="radio" name="age" value="mature">18-50</label>
-              <label>
-                <input type="radio" name="age" value="senior">more than 50</label>
-            </td>
-          </tr>
-    
-          <tr>
-            <td>Additionally:</td>
-            <td>
-              <input type="text" name="info[0]">
-              <input type="text" name="info[1]">
-              <input type="text" name="info[2]">
-            </td>
-          </tr>
-    
-        </table>
-    
-        <input type="submit" value="Search!">
-      </form>
+    <a name="list">the list</a>
+<ul>
+  <li><a href="http://google.com">http://google.com</a></li>
+  <li><a href="/tutorial">/tutorial.html</a></li>
+  <li><a href="local/path">local/path</a></li>
+  <li><a href="ftp://ftp.com/my.zip">ftp://ftp.com/my.zip</a></li>
+  <li><a href="http://nodejs.org">http://nodejs.org</a></li>
+  <li><a href="http://internal.com/test">http://internal.com/test</a></li>
+</ul>
 
     <script src="/tutorial.js"></script>
 
     <!-- live reloading logic using socket.io. Server emits events to notify the client app to refresh when changes are detected in /app -->
     <script src="/socket.io/socket.io.js"></script>
     <script src="/live-reload.js"></script>
+
 </body>
 </html>
