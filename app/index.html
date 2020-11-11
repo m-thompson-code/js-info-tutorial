@@ -5,44 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- https://javascript.info/ -->
     <title>javascript.info tutorial</title>
+
+    <style>
+        .notification {
+            position: fixed;
+            top: 0;
+            right: 0;
+
+            background: teal;
+        }
+        .test {
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <ul>
-        <li>Animals
-          <ul>
-            <li>Mammals
-              <ul>
-                <li>Cows</li>
-                <li>Donkeys</li>
-                <li>Dogs</li>
-                <li>Tigers</li>
-              </ul>
-            </li>
-            <li>Other
-              <ul>
-                <li>Snakes</li>
-                <li>Birds</li>
-                <li>Lizards</li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li>Fishes
-          <ul>
-            <li>Aquarium
-              <ul>
-                <li>Guppy</li>
-                <li>Angelfish</li>
-              </ul>
-            </li>
-            <li>Sea
-              <ul>
-                <li>Sea trout</li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-      </ul>
+    <a class="test" onclick="test()">
+        Notification
+    </a>
 
     <script src="/tutorial.js"></script>
 

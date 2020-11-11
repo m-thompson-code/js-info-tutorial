@@ -1,98 +1,44 @@
 'use strict';
 
-// let text = '<b>text</b>';
+function removeNotification(element) {
+    element.remove();
+}
 
-// elem1.append(document.createTextNode(text));
-// elem2.innerHTML = text;
-// elem3.textContent = text;
+function showNotification(options) {
+    const top = options?.top || 0;
+    const right = options?.right || 0;
+    const html = options?.html || '';
+    const className = options?.className || '';
 
-// function clear(elem) {
-//     console.log(elem);
-//     elem.innerHTML = "";
-//     while (elem.firstChild) {
-//         elem.firstChild.remove();
-//     }
-// }
+    const div = document.createElement('div');
 
-// const elem = document.querySelector('ol');
+    div.style.marginTop = `${top || 0}px`;
+    div.style.marginRight = `${right || 0}px`;
 
-// elem.remove()
+    if (html) {
+        div.innerHTML = html;
+    }
 
-// clear(elem); // clears the list
+    div.className = `notification`;
+    if (className) {
+        div.classList.add(className);
+    }
 
-// alert(table); // the table, as it should be
+    document.body.append(div);
 
-// table.remove();
-// // why there's still aaa in the document?
+    setTimeout(() => {
+        removeNotification(div);
+    }, 1500);
+}
 
-// Ask a user about its content using prompt.
-// Create the <li> with it and add it to <ul>.
-// Continue until the user cancels the input (by pressing Esc or CANCEL in prompt).
-
-// let content = "";
-// while(content = prompt("Add content", "")) {
-//     if (content === 'CANCEL') {
-//         break;
-//     }
-
-//     const li = document.createElement('li');
-//     li.textContent = content;
-
-//     document.querySelector('ul').append(li);
-// }
-
-// let data = {
-//     "Fish": {
-//         "trout": {},
-//         "salmon": {}
-//     },
-  
-//     "Tree": {
-//         "Huge": {
-//             "sequoia": {},
-//             "oak": {}
-//         },
-//         "Flowering": {
-//             "apple tree": {},
-//             "magnolia": {}
-//         }
-//     }
-// };
-
-// let container = document.getElementById('container');
-// createTree(container, data); // creates the tree in the container
-
-// function createTree(container, data) {
-//     if (!Object.keys(data).length) {
-//         return;
-//     }
-    
-//     const ul = document.createElement("ul");
-//     container.append(ul);
-
-//     for (let key in data) {
-//         const li = document.createElement("li");
-
-//         li.textContent = key;
-//         ul.append(li);
-
-//         createTree(ul, data[key]);
-//     }
-// }
-
-function addNumberOfDescendants(ul) {
-    const lis = Array.from(ul.querySelectorAll('li'));
-
-    lis.forEach(li => {
-        const descendants = li.querySelectorAll('li').length;
-
-        if (!descendants) {
-            return;
-        }
-
-        li.firstChild.textContent = li.firstChild.data + ` [${descendants}]`;
+function test() {
+    // shows an element with the text "Hello" near the right-top of the window
+    showNotification({
+        top: 10, // 10px from the top of the window (by default 0px)
+        right: 10, // 10px from the right edge of the window (by default 0px)
+        html: "Hello!", // the HTML of notification
+        className: "welcome" // an additional class for the div (optional)
     });
 }
-const ul = document.querySelector('ul');
 
-addNumberOfDescendants(ul);
+test();
