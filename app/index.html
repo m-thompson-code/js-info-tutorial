@@ -5,12 +5,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- https://javascript.info/ -->
     <title>javascript.info tutorial</title>
+
+    <style>
+        #charts {
+            display: flex;
+        }
+
+        #charts .chart {
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+            align-items: center;
+
+            /* width: 100%; */
+            min-width: 100px;
+            min-height: 170px;
+            padding: 0 12px;
+            box-sizing: border-box;
+
+            font-weight: 600;
+        }
+
+        .bar-wrapper {
+            flex-grow: 1; 
+
+            display: flex;
+            align-items: flex-end;
+
+            height: 100%;
+            width: 100%;
+        }
+        .bar {
+            height: 100%;
+            width: 100%;
+        }
+        .bar.green {
+            background: green;
+        }
+        .bar.red {
+            background: red;
+        }
+    </style>
 </head>
 <body>
-    <div>
-        <button>Test bubbling</button>
-    </div>
-    <div id="text">Text</div>
+    <form name="despoit-calculator">
+        
+        <div>
+            Desposit calculator.
+        </div>
+
+        <div>
+            Initial Desposit <input name="initial">
+        </div>
+
+        <div>
+            How many months? 
+            <select name="months" value="12">
+                <option value="3">3 (minimum)</option>
+                <option value="6">6 (half-year)</option>
+                <option value="12" selected>12 (one year)</option>
+                <option value="18">18 (1.5 years)</option>
+                <option value="24">24 (2 years)</option>
+                <option value="30">30 (2.5 years)</option>
+                <option value="36">36 (3.5 years)</option>
+                <option value="60">60 (5 years)</option>
+              </select>
+        </div>
+
+        <div>
+            Interest per year? <input name="interest">
+        </div>
+
+        <div id="charts">
+            <div class="chart">
+                <div>Was:</div>
+                <div id="initial-label">...</div>
+                <div class="bar-wrapper">
+                    <div id="initial-bar" class="bar red"></div>
+                </div>
+            </div>
+
+            <div class="chart">
+                <div>Becomes:</div>
+                <div id="becomes-label">...</div>
+                <div class="bar-wrapper">
+                    <div id="becomes-bar" class="bar green"></div>
+                </div>
+            </div>
+        </div>
+        
+    </form>
       
 
     <script src="/tutorial.js"></script>
