@@ -1,31 +1,98 @@
 'use strict';
 
-// const element = document.querySelector('[data-widget-name]');
-const element = document.querySelector('[data-widget-name="menu"]');
+// let text = '<b>text</b>';
 
-console.log(element);
+// elem1.append(document.createTextNode(text));
+// elem2.innerHTML = text;
+// elem3.textContent = text;
 
-const widgetName = element.dataset.widgetName;
+// function clear(elem) {
+//     console.log(elem);
+//     elem.innerHTML = "";
+//     while (elem.firstChild) {
+//         elem.firstChild.remove();
+//     }
+// }
 
-console.log(widgetName);
+// const elem = document.querySelector('ol');
 
-// setting style for a single link
-const links = Array.from(document.querySelectorAll('a'));
+// elem.remove()
 
-links.forEach(link => {
-    console.log(link.href);
-    console.log(link.getAttribute('href'));
-    const href = link.getAttribute('href');
+// clear(elem); // clears the list
 
-    if (!href) {
-        return;
-    }
+// alert(table); // the table, as it should be
 
-    if (href.startsWith('http://internal.com')) {
-        return;
-    }
+// table.remove();
+// // why there's still aaa in the document?
 
-    if (href.includes('://')) {
-        link.style.color = 'orange'
-    }
-});
+// Ask a user about its content using prompt.
+// Create the <li> with it and add it to <ul>.
+// Continue until the user cancels the input (by pressing Esc or CANCEL in prompt).
+
+// let content = "";
+// while(content = prompt("Add content", "")) {
+//     if (content === 'CANCEL') {
+//         break;
+//     }
+
+//     const li = document.createElement('li');
+//     li.textContent = content;
+
+//     document.querySelector('ul').append(li);
+// }
+
+// let data = {
+//     "Fish": {
+//         "trout": {},
+//         "salmon": {}
+//     },
+  
+//     "Tree": {
+//         "Huge": {
+//             "sequoia": {},
+//             "oak": {}
+//         },
+//         "Flowering": {
+//             "apple tree": {},
+//             "magnolia": {}
+//         }
+//     }
+// };
+
+// let container = document.getElementById('container');
+// createTree(container, data); // creates the tree in the container
+
+// function createTree(container, data) {
+//     if (!Object.keys(data).length) {
+//         return;
+//     }
+    
+//     const ul = document.createElement("ul");
+//     container.append(ul);
+
+//     for (let key in data) {
+//         const li = document.createElement("li");
+
+//         li.textContent = key;
+//         ul.append(li);
+
+//         createTree(ul, data[key]);
+//     }
+// }
+
+function addNumberOfDescendants(ul) {
+    const lis = Array.from(ul.querySelectorAll('li'));
+
+    lis.forEach(li => {
+        const descendants = li.querySelectorAll('li').length;
+
+        if (!descendants) {
+            return;
+        }
+
+        li.firstChild.textContent = li.firstChild.data + ` [${descendants}]`;
+    });
+}
+const ul = document.querySelector('ul');
+
+addNumberOfDescendants(ul);
