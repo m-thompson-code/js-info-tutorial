@@ -63,3 +63,15 @@ Node.append, Node.prepend, Node.before, Node.after, Node.replaceWith
 Element.insertAdjacentHTML(where, html), where="beforebegin", where="afterbegin", where="beforeend", where="afterend"
 Node.remove()
 elem.cloneNode(deep: boolean)
+clientHeight vs offsetHeight vs scrollHeight
+contextmenu event (right click)
+transitionend – when a CSS-animation finishes
+handler – a function that runs in case of an event.
+addEventListener(eventType, obj) and obj.handleEvent(event)
+Event bubbling
+event.target
+event.currentTarget
+event.stopPropagation
+event.stopImmediatePropagation
+Event capturing
+document.forms special collection
